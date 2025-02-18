@@ -57,7 +57,7 @@ Your task is to build a simple web application that displays daily returns or pr
 ## Delivery Instructions
 
 3. **Delivery Instructions**  
-   - Once complete, please compress your project into a single `.zip` file and send it via email to dan@bkln.com, anthony@bkln.com, and jaeyoung.lee@bkln.com
+   - Once complete, please compress your project into a single `.zip` file and send it via email to addresses provided to you privately.
 
 
    - If you have any questions during your work on the project, you may reach out to the emails above (please include everyone)
