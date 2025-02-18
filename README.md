@@ -7,22 +7,24 @@ Your task is to build a simple web application that displays daily returns or pr
 
 1. **Data Source**  
    - Use the attached CSV (`date, ticker, ret, price`) as your data source.  
-   - You can load it from a local file in your web application or embed it in your code if that is more convenient.
+   - You can load it from a local file in your web application.
 
-2. **Ticker Selection & Graph**  
-   - A user should be able to input or select multiple ticker symbols to visualize.  
+2. **Ticker Selection**
+   - A user should be able to input or select multiple ticker symbols to visualize in both of the following views.
+   - The user should be able to **remove** a single ticker from the view or **clear** all tickers at once.
+
+3. **Graph**
    - The user should be able to see a **graph** of either daily returns (`ret`) or daily prices (`price`) for the selected tickers over time.  
-   - The user should be able to **remove** a single ticker from the graph or **clear** all tickers at once.
 
-3. **Data Table**  
+4. **Data Table**  
    - Provide a **table view** of the data that is being displayed.  
    - This can be a simple tabular layout showing date, ticker, return, and price for the filtered or selected tickers.
 
-4. **Framework Constraints**  
+5. **Framework Constraints**  
    - You may use **any front-end framework** you prefer **except Angular**.  
    - Use whatever tooling that will help you quickly stand up your project.
 
-5. **Time & Additional Features**  
+6. **Time & Additional Features**  
    - Please spend **about three hours** on this project. Please include your documentation the total time spent and an approximate breakdown of how you spent your time. 
    - Within that time, feel free to add **any features or design improvements** you believe would be useful or interesting (e.g., user-friendly controls, styling, data filtering, search functionality, etc.).  
 
