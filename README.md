@@ -25,7 +25,7 @@ Your task is to build a simple web application that displays daily returns or pr
    - Use whatever tooling that will help you quickly stand up your project.
 
 6. **Time & Additional Features**  
-   - Please spend **about three hours** on this project. Please include your documentation the total time spent and an approximate breakdown of how you spent your time. 
+   - Please spend **about three hours** on this project. Please include in your documentation the total time spent and an approximate breakdown of how you spent your time. 
    - Within that time, feel free to add **any features or design improvements** you believe would be useful or interesting (e.g., user-friendly controls, styling, data filtering, search functionality, etc.).  
 
 ---
