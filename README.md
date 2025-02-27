@@ -33,7 +33,7 @@ Your task is to build a simple web application that displays daily returns or pr
 ## Deliverables
 
 1. **Project Code**  
-   - All source code needed to run the project.
+   - All source code needed to run the project. **Please do not include `node_modules` or any dependencies in your zip. The final zip archive should be less than 1MB.**
 
 2. **Brief Documentation**  
    - A short README detailing:
