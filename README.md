@@ -1,5 +1,5 @@
 
-Your task is to build a simple web application that displays daily returns or prices for one or more tickers over time. You may **use any modern front-end framework except Angular** (e.g., React, Vue, Svelte, etc.). We expect that you will spend **approximately three hours** on the project. 
+Your task is to build a simple web application that displays daily returns or prices for one or more tickers over time. You may **use any modern front-end framework** (e.g., React, Angular, Vue, Svelte, etc.). We expect that you will spend **approximately three hours** on the project. 
 
 ---
 
@@ -21,7 +21,7 @@ Your task is to build a simple web application that displays daily returns or pr
    - This can be a simple tabular layout showing date, ticker, return, and price for the filtered or selected tickers.
 
 5. **Framework Constraints**  
-   - You may use **any front-end framework** you prefer **except Angular**.  
+   - You may use **any front-end framework** you prefer.  
    - Use whatever tooling that will help you quickly stand up your project.
 
 6. **Time & Additional Features**  
