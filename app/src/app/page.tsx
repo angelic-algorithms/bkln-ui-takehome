@@ -21,6 +21,8 @@ export default function Page() {
   const [activeTab, setActiveTab] = useState<"returns" | "prices">("prices")
   const [showDropdown, setShowDropdown] = useState(false)
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
+  const [errorMessage, setErrorMessage] = useState("")
+
 
   // Load and parse CSV data
   useEffect(() => {
@@ -40,7 +42,6 @@ export default function Page() {
   
         // Combine parsed data if needed (e.g., flattening the array)
         const combinedData = parsedCSVs.flat();
-        console.log(combinedData);
         setData(combinedData);
   
         // Extract unique tickers from the combined data
@@ -73,14 +74,19 @@ export default function Page() {
   // Filter data based on selected tickers
   const filteredData = data.filter((item) => selectedTickers.includes(item.ticker))
 
-  // Add a ticker
-  const addTicker = () => {
-    const ticker = tickerInput.trim().toUpperCase()
-    if (ticker && availableTickers.includes(ticker) && !selectedTickers.includes(ticker)) {
-      setSelectedTickers([...selectedTickers, ticker])
-      setTickerInput("")
-    }
+
+// Add a ticker
+const addTicker = () => {
+  const ticker = tickerInput.trim().toUpperCase()
+  if (ticker && availableTickers.includes(ticker) && !selectedTickers.includes(ticker) && selectedTickers.length < 6) {
+    setSelectedTickers([...selectedTickers, ticker])
+    setTickerInput("")
+    setErrorMessage("")
   }
+  else if(selectedTickers.length === 6){
+    setErrorMessage("You have reached the maximum number of tickers (6). Please remove a ticker to add a new one.")
+  }
+}
 
   // Remove a ticker
   const removeTicker = (ticker: string) => {
@@ -150,7 +156,17 @@ export default function Page() {
                   onFocus={() => setShowDropdown(true)}
                   className="pr-10 focus-visible:ring-2 focus-visible:ring-custom-gold/50"
                 />
-                
+                {errorMessage && (
+                  <div style={{
+                    color: 'red',
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    marginTop: '5px',
+                    marginBottom: '10px'
+                  }}>
+                    {errorMessage}
+                  </div>
+                )}
                 {/* Chevron button to toggle dropdown */}
                 <button
                   type="button"

@@ -69,7 +69,7 @@ export default function TickerTable({ data }: TickerTableProps) {
     <div>
       <div className="flex items-center justify-between mb-4">
         <Input
-          placeholder="Search by ticker or date..."
+          placeholder="Search by ticker..."
           value={searchTerm}
           onChange={(e) => {
             setSearchTerm(e.target.value)
