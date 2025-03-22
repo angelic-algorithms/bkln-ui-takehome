@@ -24,32 +24,43 @@ export default function Page() {
 
   // Load and parse CSV data
   useEffect(() => {
-    const loadData = async () => {
+    const loadMultipleCSVs = async () => {
       try {
-        const response = await fetch("/data/fds_bkln_equs_daily_hist.csv")
-        const csvText = await response.text()
-        const parsedData = parseCSV(csvText)
-        console.log(parsedData)
-        setData(parsedData)
-
-        // Extract unique tickers
-        const tickers = [...new Set(parsedData.map((item) => item.ticker))].sort()
-        setAvailableTickers(tickers)
-
-        // Select first ticker by default
+        // Array of CSV file paths
+        const csvFiles = [
+          "/data/fds_bkln_equs_daily_hist.csv",
+        ];
+  
+        // Fetch all CSV files concurrently
+        const responses = await Promise.all(csvFiles.map((file) => fetch(file)));
+        const csvTexts = await Promise.all(responses.map((response) => response.text()));
+  
+        // Parse each CSV text; assume parseCSV is your parsing function
+        const parsedCSVs = csvTexts.map((csvText) => parseCSV(csvText));
+  
+        // Combine parsed data if needed (e.g., flattening the array)
+        const combinedData = parsedCSVs.flat();
+        console.log(combinedData);
+        setData(combinedData);
+  
+        // Extract unique tickers from the combined data
+        const tickers = [...new Set(combinedData.map((item) => item.ticker))].sort();
+        setAvailableTickers(tickers);
+  
+        // Optionally, select the first ticker by default
         if (tickers.length > 0) {
-          setSelectedTickers([tickers[0]])
+          setSelectedTickers([tickers[0]]);
         }
-
-        setLoading(false)
+  
+        setLoading(false);
       } catch (error) {
-        console.error("Error loading CSV data:", error)
-        setLoading(false)
+        console.error("Error loading CSV data:", error);
+        setLoading(false);
       }
-    }
-
-    loadData()
-  }, [])
+    };
+  
+    loadMultipleCSVs();
+  }, []);
 
 
 
