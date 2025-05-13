@@ -169,7 +169,7 @@ export default function TickerTable({ data }: TickerTableProps) {
             {Math.min(currentPage * rowsPerPage, filteredAndSortedData.length)} of {filteredAndSortedData.length}{" "}
             entries
           </div>
-          <div className="flex gap-1">
+          <div className="flex flex-wrap gap-1 justify-center sm:justify-end w-full overflow-x-auto">
             {/* Skip to First Page button */}
             <Button
               variant="outline"
